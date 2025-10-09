@@ -21,12 +21,7 @@ Compare GBT and LGBTD on real-world data.
             quadratic loss |c_actual - c_predicted|^2
 """
 
-using DrWatson
-@quickactivate "GBTLab2"
-
-# include(srcdir("GBTLab2.jl"))
 using .GBTLab2
-
 using Base.Threads
 using LinearAlgebra
 using CSV

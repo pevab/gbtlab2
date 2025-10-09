@@ -1,18 +1,28 @@
-# GBTLab2
+# Generalizing while preserving monotonicity in comparison-based preference learning models
 
-Open a terminal
-```bash
-cd GBTLab2.jl
-julia
-```
-Then, in the Julia repl, load the code.
+This repository contains the code for the experiments presented in the paper [Generalizing while preserving monotonicity in comparison-based preference learning models](https://arxiv.org/abs/2506.08616v2).
+
+# Repository organization
+
+The repository is organized as follows
+- `src/GBTLab2.jl` is a module containing the main data structures and methods.
+- `src/Experiment{N}.jl` contains code for experiment number N.
+- `data/experiment{N}` is the data folder for experiment number N. 
+
+We committed the data of our own runs in the repository. Be careful when cloning the repository,
+as some files may be relatively large (up to 100MB).
+
+This code has been tested with julia version `1.11.7`.
+
+# Running the experiments
+
+In the Julia repl, load the code.
 ```julia
 using DrWatson
 @quickactivate "GBTLab2"
 ```
 
-Each experiment code is located in a separate file, e.g. `Experiment1.jl`.
-Run the experiment using
+Every experiment script is organized same pattern. Run the experiment using
 ```julia
 include("src/Experiment1.jl")
 run(xp1)
