@@ -20,6 +20,7 @@ In the Julia repl, load the code.
 ```julia
 using DrWatson
 @quickactivate "GBTLab2"
+include(srcdir("GBTLab2.jl"))
 ```
 
 Every experiment script is organized same pattern. Run the experiment using
