@@ -410,7 +410,7 @@ function do_plot(data :: Experiment4Results)
         1.1 * max(0, maximum(maximum(values))),
     )
     boxplot!(labels, values; legend=false, outliers=true, ylims=ylims)
-    ylabel!("empirical risk")
+    ylabel!("validation risk")
     plt
 end
 
