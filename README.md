@@ -23,18 +23,55 @@ using DrWatson
 include(srcdir("GBTLab2.jl"))
 ```
 
-Every experiment script is organized same pattern. Run the experiment using
+Every experiment script is organized same pattern. 
+
+## Experiment 1 - nMSE as a function of the embedding dimension D
+
+Run the experiment using
 ```julia
-include("src/Experiment1.jl")
+include(srcdir("Experiment1.jl"))
 run(xp1)
 ```
-This produces results in the data folder, e.g. `data/measure-1.obj`.
-To get a description of the experiment
+This produces results in the data folder. To plot the results, from within the Julia repl, type
 ```julia
-data = deserialize("data/measure-1.obj")
-data.description
+data = deserialize(datadir("experiment1/measure-1.obj"))
+do_plot(data)
 ```
-To plot the results, from within the Julia repl, type
+
+## Experiment 2 - nMSE as a function of the number N of comparisons
+
+Run the experiment using
 ```julia
+include(srcdir("Experiment2.jl"))
+run(xp2)
+```
+This produces results in the data folder. To plot the results, from within the Julia repl, type
+```julia
+data = deserialize(datadir("experiment2/measure-1.obj"))
+do_plot(data)
+```
+
+## Experiment 3 - Two cliques
+Run the experiment using
+```julia
+include(srcdir("Experiment3.jl"))
+run(xp3)
+```
+This produces results in the data folder. To plot the results, from within the Julia repl, type
+```julia
+data = deserialize(datadir("experiment3/measure-1.obj"))
+do_plot(data)
+```
+
+## Experiment 4 - Real-world dataset
+Run the experiment using
+```julia
+include(srcdir("Experiment4.jl"))
+run(xp4)
+```
+Warning, the experiment can take up to 2 hours.
+This produces results in the data folder. To plot the results, from within the Julia repl, type
+```julia
+data = deserialize(datadir("experiment4/blueberry.obj"))
 do_plot(data)
 ```
