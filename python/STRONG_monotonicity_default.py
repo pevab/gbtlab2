@@ -13,7 +13,6 @@ def experiment(A_max, D_max, nb_seed, nb_iter, alpha):
 
     for A in A_values:
         for D in D_values:
-            print("A, D = ", [int(A),int(D)])
             count_metagood = 0
             for seed in range(nb_seed):
                 #Sigma_x = Functions.generate_X(D, D, True)
@@ -54,18 +53,19 @@ def build_plot(Probs, figname):
     ax.set_ylim(A_max - 1.5, -0.5)  # Set limits to show from 2 to A_max
 
     plt.savefig(figname)
-    print("Saved figure")
     return
 
 A_max = 15
 D_max = 15
-nb_seed = 10
+nb_seed = 100
 nb_iter = 100
 
-## Experiment 1: alpha=0
-probs = experiment(A_max, D_max, nb_seed, nb_iter, 1/2)
-build_plot(probs, 'density-a.png')
+## Experiment 1
+alpha=0
+probs = experiment(A_max, D_max, nb_seed, nb_iter, alpha)
+build_plot(probs, 'density-a.pdf')
 
-## Experiment 2: alpha=1/2
-probs = experiment(A_max, D_max, nb_seed, nb_iter, 0)
-build_plot(probs, 'density-b.png')
+## Experiment 2
+alpha=1/2
+probs = experiment(A_max, D_max, nb_seed, nb_iter, alpha)
+build_plot(probs, 'density-b.pdf')
